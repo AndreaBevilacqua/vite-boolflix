@@ -1,6 +1,9 @@
 <script>
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 export default {
-  name: 'Booflix'
+  name: 'Booflix',
+  components: { AppHeader, AppMain }
 };
 </script>
 

@@ -1,3 +1,4 @@
+import '@fontsource-variable/rubik';
 import { createApp } from 'vue'
 import App from './App.vue'
 

@@ -6,6 +6,8 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+    <CoversContainer />
+</template>
 
 <style lang="scss"></style>

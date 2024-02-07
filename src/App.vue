@@ -8,7 +8,9 @@ export default {
 </script>
 
 <template>
-  <!-- Template here -->
+  <AppHeader />
+
+  <AppMain />
 </template>
 
 <style lang="scss">

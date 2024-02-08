@@ -1,9 +1,13 @@
 <script>
+import SearchBar from './SearchBar.vue';
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    components: { SearchBar }
 };
 </script>
 
-<template></template>
+<template>
+    <SearchBar />
+</template>
 
 <style lang="scss"></style>

@@ -1,11 +1,19 @@
 <script>
 export default {
-    name: 'CoverCard'
+    name: 'CoverCard',
+    props: {
+        production: Object
+    }
 };
 </script>
 
 <template>
-    <!-- Template here -->
+    <ul>
+        <li>{{ production.title || production.name }}</li>
+        <li>{{ production.original_title || production.original_name }}</li>
+        <li>{{ production.original_language }}</li>
+        <li>{{ production.vote_average }}</li>
+    </ul>
 </template>
 
 <style lang="scss"></style>

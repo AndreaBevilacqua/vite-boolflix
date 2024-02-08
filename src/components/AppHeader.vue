@@ -20,7 +20,7 @@ export default {
                 return;
             }
 
-            this.fetchApi("search/movie", 'movie');
+            this.fetchApi("search/movie", 'movies');
             this.fetchApi("search/tv", 'series');
         },
 

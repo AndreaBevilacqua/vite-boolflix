@@ -1,9 +1,9 @@
 <script>
 import { store } from '../data/store';
-import CoversContainer from './CoversContainer.vue';
+import CoverCard from './cover/CoverCard.vue';
 export default {
     name: 'AppMain',
-    components: { CoversContainer },
+    components: { CoverCard },
     data: () => ({ store })
 };
 </script>
@@ -11,12 +11,11 @@ export default {
 <template>
     <section>
         <h2>Movies</h2>
-        <ul v-for="movie in store.movies" :key="movie.id">
-            <li>{{ movie.title }}</li>
-            <li>{{ movie.original_title }}</li>
-            <li>{{ movie.original_language }}</li>
-            <li>{{ movie.vote_average }}</li>
-        </ul>
+        <CoverCard v-for="movie in store.movies" :key="movie.id" :production="movie" />
+    </section>
+    <section>
+        <h2>Series</h2>
+        <CoverCard v-for="serie in store.series" :key="serie.id" :production="serie" />
     </section>
 </template>
 

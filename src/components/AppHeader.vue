@@ -8,11 +8,23 @@ export default {
     name: 'AppHeader',
     components: { SearchBar },
     methods: {
-        searchMovies() {
+
+        setTitleFilter(term) {
+            store.filter = term;
+        },
+
+        searchProductions() {
             if (!store.filter) {
                 store.movies = [];
+                store.series = [];
                 return;
             }
+
+            this.fetchApi("search/movie", 'movie');
+            this.fetchApi("search/tv", 'series');
+        },
+
+        fetchApi(endpoint, collection) {
 
             const { baseUri, language, apiKey } = api;
 
@@ -21,25 +33,20 @@ export default {
                 api_key: apiKey,
                 language
             }
-
-            axios.get(`${baseUri}/search/movie`, { params })
+            axios.get(`${baseUri}/${endpoint}`, { params })
                 .then((res) => {
-                    store.movies = res.data.results;
+                    store[collection] = res.data.results;
                 })
                 .catch((err) => {
                     console.error(err)
                 })
-        },
-
-        setTitleFilter(term) {
-            store.filter = term; t
         }
     }
 };
 </script>
 
 <template>
-    <SearchBar @form-submit="searchMovies" @term-change="setTitleFilter" placeholder="Cerca film o serie tv"
+    <SearchBar @form-submit="searchProductions" @term-change="setTitleFilter" placeholder="Cerca film o serie tv"
         buttonLabel="Cerca" />
 </template>
 

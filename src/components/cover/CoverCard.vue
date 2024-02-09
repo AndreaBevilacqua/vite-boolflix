@@ -1,4 +1,5 @@
 <script>
+import { pics } from '../../data/index'
 export default {
     name: 'CoverCard',
     props: {
@@ -18,12 +19,17 @@ export default {
         flagSrc() {
             const url = new URL(`../../assets/img/${this.lang}.png`, import.meta.url);
             return url.href;
-        }
+        },
+
+
     }
 };
 </script>
 
 <template>
+    <div class="poster-img">
+        <img :src="" :alt="title">
+    </div>
     <ul>
         <li>{{ title }}</li>
         <li>{{ originalTitle }}</li>

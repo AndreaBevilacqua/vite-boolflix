@@ -4,4 +4,9 @@ const api = {
     language: 'it-IT'
 }
 
-export { api }
+const pics = {
+    placeholder: '../assets/img/netflix.png',
+    baseUri: 'https://image.tmdb.org/t/p/w342'
+}
+
+export { api, pics }

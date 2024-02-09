@@ -11,7 +11,7 @@ export default {
 <template>
     <div class="container">
         <section>
-            <h2>FILM</h2>
+            <h2>FILM </h2>
             <div class="row-posters">
                 <CoverCard v-for="movie in store.movies" :key="movie.id" v-bind="movie" />
             </div>

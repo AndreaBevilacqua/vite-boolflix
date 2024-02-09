@@ -27,18 +27,25 @@ form {
         outline: none;
         background-color: transparent;
         position: absolute;
-        right: 290px;
+        right: 275px;
         top: 28px;
+
+        i {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
     }
 
     input {
-        border: none;
+        border: 2px solid white;
         outline: none;
-        border-radius: 20px;
-        height: 20px;
-        padding-left: 20px;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 28px;
         position: relative;
-        background-color: rgb(165, 165, 165);
+        background-color: rgb(0, 0, 0);
+        color: white;
     }
 }
 </style>

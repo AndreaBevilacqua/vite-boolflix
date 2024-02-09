@@ -16,13 +16,19 @@ ul li {
     text-decoration: none;
     list-style-type: none;
 
+
     a {
         text-decoration: none;
         color: white;
+        cursor: pointer;
     }
 }
 
 .container {
     margin: 0 auto;
     max-width: 1800px;
+}
+
+i {
+    cursor: pointer;
 }

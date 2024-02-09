@@ -21,14 +21,16 @@ export default {
             return url.href;
         },
 
-
+        posterSrc() {
+            return this.posterPath ? pics.baseUri + this.posterPath : pics.placeholder
+        }
     }
 };
 </script>
 
 <template>
     <div class="poster-img">
-        <img :src="" :alt="title">
+        <img :src="posterSrc" :alt="title">
     </div>
     <ul>
         <li>{{ title }}</li>

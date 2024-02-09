@@ -5,7 +5,7 @@ const api = {
 }
 
 const pics = {
-    placeholder: '../assets/img/netflix.png',
+    placeholder: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Netflix-new-icon.png',
     baseUri: 'https://image.tmdb.org/t/p/w342'
 }
 

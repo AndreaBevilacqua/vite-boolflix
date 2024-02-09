@@ -102,7 +102,7 @@ export default {
 header {
     background-color: rgb(15, 15, 15);
     padding: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 
     display: flex;
     justify-content: space-between;

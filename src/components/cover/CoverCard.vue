@@ -33,25 +33,29 @@ export default {
 </script>
 
 <template>
-    <img class="poster" :src="posterSrc" :alt="title">
-    <ul>
-        <li>{{ title }}</li>
-        <li>{{ originalTitle }}</li>
-        <li>
-            <img v-if="HasFlag" :src="flagSrc" :alt="lang">
-            <span v-else>{{ lang }}</span>
-        </li>
-        <li><i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas' : 'far'"></i></li>
-    </ul>
+    <div class="card">
+        <img class="poster" :src="posterSrc" :alt="title">
+        <div class="overlay">
+            <ul>
+                <li>{{ title }}</li>
+                <li>{{ originalTitle }}</li>
+                <li>
+                    <img v-if="HasFlag" :src="flagSrc" :alt="lang">
+                    <span v-else>{{ lang }}</span>
+                </li>
+                <li><i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas' : 'far'"></i></li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <style lang="scss"scoped>
 .poster {
-    width: 100%;
+    display: block;
     object-fit: contain;
     height: 400px;
     width: 300px;
-    margin-right: 10px;
+    margin-right: -10px;
     transition: transform 450ms;
 
     &:hover {

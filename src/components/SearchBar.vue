@@ -27,8 +27,8 @@ form {
         outline: none;
         background-color: transparent;
         position: absolute;
-        right: 190px;
-        top: 27px;
+        right: 290px;
+        top: 28px;
     }
 
     input {

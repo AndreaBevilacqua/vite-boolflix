@@ -11,12 +11,16 @@ export default {
 <template>
     <div class="container">
         <section>
-            <h2>FILM ORGINALI</h2>
-            <CoverCard v-for="movie in store.movies" :key="movie.id" v-bind="movie" />
+            <h2>FILM</h2>
+            <div class="row-posters">
+                <CoverCard v-for="movie in store.movies" :key="movie.id" v-bind="movie" />
+            </div>
         </section>
         <section>
-            <h2>SERIE ORIGINALI</h2>
-            <CoverCard v-for="serie in store.series" :key="serie.id" v-bind="serie" />
+            <h2>SERIE </h2>
+            <div class="row-posters">
+                <CoverCard v-for="serie in store.series" :key="serie.id" v-bind="serie" />
+            </div>
         </section>
     </div>
 </template>
@@ -25,5 +29,16 @@ export default {
 h2 {
     margin: 20px 0;
     font-size: 3rem;
+}
+
+.row-posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 </style>

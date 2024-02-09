@@ -87,13 +87,19 @@ export default {
         <div class="navbar">
             <img src="../assets/img/netflix.png" alt="netflix">
             <ul>
-                <li v-for="link in links">{{ link.text }}</li>
+                <li v-for="link in links"><a :href="link.url">{{ link.text }}</a></li>
             </ul>
         </div>
 
         <div class="search-bar">
             <SearchBar @form-submit="searchProductions" @term-change="setTitleFilter" placeholder="Cerca film o serie tv"
                 buttonLabel="Cerca" />
+
+            <i class="fa-solid fa-bell"></i>
+            <div class="user-select">
+                <img src="../assets/img/avatar.png" alt="avatar">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
         </div>
     </header>
 </template>
@@ -103,16 +109,50 @@ header {
     background-color: rgb(15, 15, 15);
     padding: 20px;
     margin-bottom: 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    i {
+        font-size: 1.2rem;
+    }
+
+    img {
+        height: 30px;
+    }
+
+    .user-select {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        i {
+            font-size: .7rem;
+        }
+    }
+}
+
 .navbar {
     display: flex;
-    gap: 20px;
+    gap: 5rem;
     align-items: center;
+
+    img {
+        max-width: 100px;
+    }
 
     ul {
         display: flex;

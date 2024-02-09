@@ -33,9 +33,7 @@ export default {
 </script>
 
 <template>
-    <div class="poster-img">
-        <img :src="posterSrc" :alt="title">
-    </div>
+    <img class="poster" :src="posterSrc" :alt="title">
     <ul>
         <li>{{ title }}</li>
         <li>{{ originalTitle }}</li>
@@ -47,8 +45,21 @@ export default {
     </ul>
 </template>
 
-<style lang="scss">
-img {
-    max-width: 100px;
+<style lang="scss"scoped>
+.poster {
+    width: 100%;
+    object-fit: contain;
+    height: 400px;
+    width: 300px;
+    margin-right: 10px;
+    transition: transform 450ms;
+
+    &:hover {
+        transform: scale(1.08)
+    }
+}
+
+ul {
+    display: none;
 }
 </style>

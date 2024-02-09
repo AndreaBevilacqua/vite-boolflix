@@ -43,7 +43,7 @@ export default {
             <img v-if="HasFlag" :src="flagSrc" :alt="lang">
             <span v-else>{{ lang }}</span>
         </li>
-        <li><i class="fas fa-star"></i></li>
+        <li><i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas' : 'far'"></i></li>
     </ul>
 </template>
 

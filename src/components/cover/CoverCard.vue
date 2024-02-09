@@ -23,6 +23,10 @@ export default {
 
         posterSrc() {
             return this.posterPath ? pics.baseUri + this.posterPath : pics.placeholder
+        },
+
+        vote() {
+            return Math.round(this.vote / 2)
         }
     }
 };
@@ -39,7 +43,7 @@ export default {
             <img v-if="HasFlag" :src="flagSrc" :alt="lang">
             <span v-else>{{ lang }}</span>
         </li>
-        <li>{{ vote }}</li>
+        <li><i class="fas fa-star"></i></li>
     </ul>
 </template>
 

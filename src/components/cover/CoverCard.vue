@@ -35,35 +35,60 @@ export default {
 <template>
     <div class="card">
         <img class="poster" :src="posterSrc" :alt="title">
-        <div class="overlay">
-            <ul>
-                <li>{{ title }}</li>
-                <li>{{ originalTitle }}</li>
-                <li>
-                    <img v-if="HasFlag" :src="flagSrc" :alt="lang">
-                    <span v-else>{{ lang }}</span>
-                </li>
-                <li><i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas' : 'far'"></i></li>
-            </ul>
-        </div>
+        <ul class="overlay">
+            <li>{{ title }}</li>
+            <li>{{ originalTitle }}</li>
+            <li>
+                <img v-if="HasFlag" :src="flagSrc" :alt="lang">
+                <span v-else>{{ lang }}</span>
+            </li>
+            <li><i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas' : 'far'"></i></li>
+        </ul>
     </div>
 </template>
 
 <style lang="scss"scoped>
+.fas {
+    color: rgb(255, 217, 0);
+}
+
+.card {
+    position: relative;
+    width: 25%;
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 17px;
+        right: 17px;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        height: 0;
+        transition: .5s ease;
+    }
+}
+
+.card:hover .overlay {
+    height: 50%;
+}
+
 .poster {
     display: block;
     object-fit: contain;
     height: 400px;
     width: 300px;
-    margin-right: -10px;
     transition: transform 450ms;
-
-    &:hover {
-        transform: scale(1.08)
-    }
 }
 
 ul {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding-left: 20px;
+
+    img {
+        max-width: 60px;
+    }
 }
 </style>

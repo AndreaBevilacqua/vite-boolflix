@@ -31,6 +31,11 @@ h2 {
     font-size: 3rem;
 }
 
+h3 {
+    text-align: center;
+    font-size: 3rem;
+}
+
 .row-posters {
     display: flex;
     overflow-y: hidden;

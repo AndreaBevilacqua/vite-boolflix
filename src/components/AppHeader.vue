@@ -4,7 +4,35 @@ import { store } from '../data/store';
 import { api } from '../data/index';
 import SearchBar from './SearchBar.vue';
 export default {
-    data: () => ({ store }),
+    data: () => ({
+        store,
+        links: [
+            {
+                text: 'Home',
+                url: '#',
+            },
+            {
+                text: 'Serie Tv',
+                url: '#',
+            },
+            {
+                text: 'Film',
+                url: '#',
+            },
+            {
+                text: 'Originali',
+                url: '#',
+            },
+            {
+                text: 'Aggiunti di recente',
+                url: '#',
+            },
+            {
+                text: 'La mia lista',
+                url: '#',
+            },
+        ]
+    }),
     name: 'AppHeader',
     components: { SearchBar },
     methods: {
@@ -55,8 +83,40 @@ export default {
 </script>
 
 <template>
-    <SearchBar @form-submit="searchProductions" @term-change="setTitleFilter" placeholder="Cerca film o serie tv"
-        buttonLabel="Cerca" />
+    <header>
+        <div class="navbar">
+            <img src="../assets/img/netflix.png" alt="netflix">
+            <ul>
+                <li v-for="link in links">{{ link.text }}</li>
+            </ul>
+        </div>
+
+        <div class="search-bar">
+            <SearchBar @form-submit="searchProductions" @term-change="setTitleFilter" placeholder="Cerca film o serie tv"
+                buttonLabel="Cerca" />
+        </div>
+    </header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+header {
+    background-color: rgb(15, 15, 15);
+    padding: 20px;
+    margin-bottom: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    ul {
+        display: flex;
+        gap: 11px;
+    }
+}
+</style>

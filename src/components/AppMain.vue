@@ -11,11 +11,11 @@ export default {
 <template>
     <section>
         <h2>Movies</h2>
-        <CoverCard v-for="movie in store.movies" :key="movie.id" :production="movie" />
+        <CoverCard v-for="movie in store.movies" :key="movie.id" :v-bind="movie" />
     </section>
     <section>
         <h2>Series</h2>
-        <CoverCard v-for="serie in store.series" :key="serie.id" :production="serie" />
+        <CoverCard v-for="serie in store.series" :key="serie.id" :v-bind="serie" />
     </section>
 </template>
 

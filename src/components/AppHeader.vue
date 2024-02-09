@@ -35,7 +35,16 @@ export default {
             }
             axios.get(`${baseUri}/${endpoint}`, { params })
                 .then((res) => {
-                    store[collection] = res.data.results;
+                    store[collection] = res.data.results.map((p) => {
+                        return {
+                            id: p.id,
+                            title: p.title || p.name,
+                            originalTitle: p.original_title || p.original_name,
+                            vote: p.vote_average,
+                            lang: p.original_language,
+                            posterPath: p.poster_path
+                        }
+                    })
                 })
                 .catch((err) => {
                     console.error(err)
